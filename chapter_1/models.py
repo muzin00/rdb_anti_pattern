@@ -6,3 +6,10 @@ class BadHoge(models.Model):
 
     class Meta:
         db_table = "bad_hoge"
+
+
+class GoodHoge(models.Model):
+    is_deleted = models.BooleanField(default=False, verbose_name="削除フラグ")
+
+    class Meta:
+        db_table = "good_hoge"
