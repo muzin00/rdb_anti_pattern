@@ -8,7 +8,7 @@ class ConsumptionTax(models.Model):
 
     tax_rate = models.IntegerField(verbose_name="消費税率")
     activation_date = models.DateField(verbose_name="有効日")
-    expiration_date = models.DateField(verbose_name="失効日")
+    expiration_date = models.DateField(null=True, verbose_name="失効日")
 
 
 class Sales(models.Model):
