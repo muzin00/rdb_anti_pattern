@@ -53,7 +53,7 @@ class Cart(models.Model):
     RELATED_NAME = "carts"
 
     sales = models.ForeignKey(Sales, on_delete=models.CASCADE, related_name=RELATED_NAME)
-    products = models.ForeignKey(Product, on_delete=models.CASCADE, related_name=RELATED_NAME)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name=RELATED_NAME)
     quantity = models.PositiveIntegerField(verbose_name="数量")
     buyer = models.CharField(max_length=255, verbose_name="購入者")
 
