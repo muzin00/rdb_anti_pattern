@@ -1,0 +1,13 @@
+{
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "black-formatter.args": ["--config=pyproject.toml"],
+  "flake8.args": ["--config=setup.cfg"],
+  "isort.args": ["--settings-file=pyproject.toml"]
+}
