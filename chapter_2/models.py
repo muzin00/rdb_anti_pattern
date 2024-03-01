@@ -27,6 +27,7 @@ class Sales(models.Model):
         choices=DeliveryStatus.choices,
         verbose_name="配送状態",
     )
+    consumption_tax = models.OneToOneField(ConsumptionTax, on_delete=models.PROTECT)
 
     class Meta:
         db_table = "sales"
