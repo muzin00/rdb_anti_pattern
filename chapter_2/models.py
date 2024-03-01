@@ -59,3 +59,6 @@ class Cart(models.Model):
 
     class Meta:
         db_table = "carts"
+
+    def total_price(self) -> int:
+        return self.quantity * self.product.price
