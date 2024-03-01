@@ -6,11 +6,7 @@ class ConsumptionTax(models.Model):
     消費税
     """
 
-    class TaxRate(models.IntegerChoices):
-        _005 = 0.05
-        _008 = 0.08
-
-    tax_rate = models.IntegerField(choices=TaxRate.choices, verbose_name="消費税率")
+    tax_rate = models.IntegerField(verbose_name="消費税率")
     activation_date = models.DateField(verbose_name="有効日")
     expiration_date = models.DateField(verbose_name="失効日")
 
@@ -55,12 +51,8 @@ class Cart(models.Model):
 
     RELATED_NAME = "carts"
 
-    sales = models.ForeignKey(
-        Sales, on_delete=models.CASCADE, related_name=RELATED_NAME
-    )
-    products = models.ForeignKey(
-        Product, on_delete=models.CASCADE, related_name=RELATED_NAME
-    )
+    sales = models.ForeignKey(Sales, on_delete=models.CASCADE, related_name=RELATED_NAME)
+    products = models.ForeignKey(Product, on_delete=models.CASCADE, related_name=RELATED_NAME)
     quantity = models.PositiveIntegerField(verbose_name="数量")
     buyer = models.CharField(max_length=255, verbose_name="購入者")
 
